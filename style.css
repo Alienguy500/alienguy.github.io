@@ -6,6 +6,7 @@
 }
 .heading {
     font-family:monospace;
+    font-weight:bold;
     font-size: 50px;
     color:white;
     padding: 60px;
@@ -15,10 +16,22 @@
     text-align: center;
 }
 
+.mainText {
+    font-family:monospace;
+    font-size:20px;
+    color:white;
+}
+
 .mainBackground {
     background-color: rgb(32, 32, 32);
     position:relative;
     top: 0;
+}
+
+.mainContent {
+    margin-left:20px;
+    margin-right:50%;
+    transition: margin-left .5s;
 }
 
 /* Sidebar menu */
