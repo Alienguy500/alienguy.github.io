@@ -97,5 +97,12 @@ body {
     padding: 16px;
     position:fixed;
     top:20px;
-  }
-  
+}
+
+#textBasedGame {
+    font-family:monospace;
+    font-size:20px;
+    width: 640px;
+    height: 640px;
+    background-color: brown;
+}  
