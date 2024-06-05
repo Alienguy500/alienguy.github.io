@@ -1,0 +1,1 @@
+var secretScore = 0;
