@@ -83,6 +83,32 @@
     background-color: #444;
 }
 
+.column {
+    float: left;
+    width:25%;
+    padding: 10px;
+}
+
+.column img {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+.row:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.container {
+    position: relative;
+    display: none;
+}
+
 body {
     background-color: rgb(32, 32, 32);
 }
