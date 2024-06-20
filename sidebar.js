@@ -34,13 +34,3 @@ hamburgerbtn.addEventListener(
     buttonUnhoverSound.play();
   }
 )
-
-const headings = document.getElementsByClassName("heading");
-for (let i=0; i < headings.length; i++) {
-  headings[i].addEventListener(
-    "mouseover",
-    (event) => {
-      startTyping(headings[i].id);
-    }
-  )
-}
