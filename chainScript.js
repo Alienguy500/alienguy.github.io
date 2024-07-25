@@ -58,7 +58,7 @@ var Dot = function() {
     // everytime the screen repaints via requestAnimationFrame().
   function animate() {
     draw();
-    requestAnimationFrame(animate);
+    requestAnimationFrame(function() {animate(); display();});
   }
   
   // And get it started by calling animate().
