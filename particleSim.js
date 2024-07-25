@@ -11,6 +11,11 @@ class Vector { // a simple 2D vector
         var result = new Vector(dx,dy);
         return result;
     }
+    subtract(vector2) {
+        var dx = this.x-vector2.x;
+        var dy = this.y-vector2.y;
+        return new Vector(dx,dy);
+    }
     scale(value) {
         var x = this.x*value;
         var y = this.y*value;
@@ -44,8 +49,20 @@ class Particle {
 
 var particles = []
 
+function getDistance(pos1,pos2) { // Get the Euclidean distance between two points on the screen in pixels
+    return Math.sqrt(((pos1.x-pos2.x)**2)+((pos1.y-pos2.y)**2));
+}
+
+function goTowards(pos1,pos2) {
+    var distance = getDistance(pos1,pos2);
+    var result = new Vector;
+    result = pos2.subtract(pos1);
+    result = result.scale(1/distance);
+    return result;
+}
+
 function initiate() {
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < 20; i++) {
         var randomx = Math.floor(Math.random() * 1000);
         var randomy = Math.floor(Math.random() * 1000);
         var newPosition = new Vector(randomx,randomy);
@@ -55,13 +72,22 @@ function initiate() {
     }
 }
 
+
 function drawParticles() {
     particles.forEach(function(particle,index,particles) {
         
-        particle.accelerate(new Vector(0, 1));
-        
-        if (particle.position.y < 1500 && particle.position.add(particle.motion).y > 1500) {
-            particle.position.y = 0;
+        var mousePos = new Vector(mouse.x,mouse.y)
+
+        particles.forEach(function(particlee, index, particles) {
+            if (getDistance(particle.position,particlee.position) != 0 && getDistance(particle.position,particlee.position) < 10) {
+                particle.accelerate(goTowards(particle.position,particlee.position).scale(1/(getDistance(particle.position,particlee.position))**2));
+            }
+        })
+
+        //particle.accelerate(new Vector(0, 1));
+
+        if (getDistance(particle.position,mousePos) > 10) {
+            particle.accelerate(goTowards(particle.position,mousePos).scale((getDistance(particle.position,mousePos)-300)/100));
         }
         
         particle.motion = particle.motion.scale(0.9)
