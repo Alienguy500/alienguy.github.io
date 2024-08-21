@@ -138,4 +138,14 @@ body {
     width: 640px;
     height: 640px;
     background-color: brown;
-}  
+}
+
+#copyright {
+    font-family:monospace;
+    font-size:20px;
+    color:#FFFFFF;
+    bottom:0px;
+    padding:16px;
+    position:sticky;
+    background-color:rgba(0, 139, 139, 0.5);
+}
