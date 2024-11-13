@@ -62,7 +62,7 @@ function goTowards(pos1,pos2) {
 }
 
 function initiate() {
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) { // Create 20 particles
         var randomx = Math.floor(Math.random() * 1000);
         var randomy = Math.floor(Math.random() * 1000);
         var newPosition = new Vector(randomx,randomy);
