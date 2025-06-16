@@ -19,7 +19,7 @@
     padding: 60px;
 }
 .header {
-    background-image: linear-gradient(rgb(15,111,198), rgba(15, 110, 198, 0));
+    background-image: linear-gradient(rgb(161, 15, 198), rgba(15, 110, 198, 0));
     text-align: center;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .mainBackground {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(62, 6, 88);
     position:relative;
     top: 0;
 }
@@ -117,7 +117,7 @@
 }
 
 body {
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(62, 6, 88);
 }
 
 @media screen and (max-height: 450px) {
@@ -147,5 +147,5 @@ body {
     bottom:0px;
     padding:16px;
     position:sticky;
-    background-color:rgba(0, 139, 139, 0.5);
+    background-color:rgba(139, 0, 104, 0.5);
 }
